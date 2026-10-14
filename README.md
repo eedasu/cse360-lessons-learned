@@ -1,2 +1,26 @@
-# cse360-lessons-learned-
-CSE 360 team project: a JavaFX and H2 Lessons Learned System built on the Foundations code, where contributors capture, search, update, and reuse lessons learned.
+# CSE 360 Lessons Learned System
+
+Team project for CSE 360 (Fall 2026), built on the Foundations code by Prof. Lynn Robert Carter.
+
+**Team:** Emilia Davey, Virgil Jones, David Nevarez, Daniel Martinez Julio, Alex Meyers
+
+## What it does
+A JavaFX desktop application with an H2 database. Admins manage users and roles. Contributors create,
+view, search, update, and delete their own lessons learned, record experience entries, and see which
+fields a curator has locked.
+
+## Run it in Eclipse
+1. File > Import > General > Existing Projects into Workspace, and select this folder.
+2. Make sure JavaFX is on the module path (same setup as HW1/HW2).
+3. Run `applicationMain.FoundationsMain`.
+
+The database is created in your home folder (`~/FoundationDatabase.mv.db`), not in this repository.
+
+## Tests
+Close the app first (H2 allows one connection), then run:
+- `inputValidation.LessonRecognizerTest` (45 tests)
+- `lessonTests.ContributorFunctionalTest` (21 tests)
+
+## Working with Jira
+Put the Jira work item key at the start of every commit message, for example
+`TP2-25 Relabel Role1 as Contributor on admin pages`, so the commit shows up on that card.
