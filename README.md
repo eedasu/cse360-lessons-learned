@@ -1,6 +1,6 @@
 # CSE 360 Lessons Learned System
 
-Team project for CSE 360 (Fall 2026), built on the Foundations code by Prof. Lynn Robert Carter.
+Team project for CSE 360 (Fall 2026), built on the Foundations code by Lynn Robert Carter.
 
 **Team:** Emilia Davey, Virgil Jones, David Nevarez, Daniel Martinez Julio, Alex Meyers
 
@@ -18,8 +18,11 @@ The database is created in your home folder (`~/FoundationDatabase.mv.db`), not 
 
 ## Tests
 Close the app first (H2 allows one connection), then run:
-- `inputValidation.LessonRecognizerTest` (45 tests)
-- `lessonTests.ContributorFunctionalTest` (21 tests)
+- `lessonTests.AllContributorTests` (66 requirement tests; each test class in `lessonTests` can also run on its own)
+- `inputValidation.LessonRecognizerTest` (58 input validation tests)
+- `lessonTests.ManualGuiTests` (manual GUI tests M1-M7; run with `setup USERNAME` first to add sample lessons)
+
+`Requirements-Test Traceability.pdf` lists every requirement and its tests.
 
 ## Working with Jira
 Put the Jira work item key at the start of every commit message, for example
