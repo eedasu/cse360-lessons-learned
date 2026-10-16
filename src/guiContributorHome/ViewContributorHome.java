@@ -29,8 +29,8 @@ import entityClasses.User;
  * point for every other Contributor action: creating a lesson (guiCreateLesson) and opening a
  * lesson to view, edit, add experience to, or delete it (guiLessonDetails).</p>
  *
- * <p> This page replaces the Foundations Role1 home page.  The Lessons Learned System V1 stories
- * say new roles will replace Role1 and Role2; this is the Contributor role.  The user's role is
+ * <p> This page replaces the Foundations Contributor home page.  The Lessons Learned System V1 stories
+ * say new roles will replace Contributor and Role2; this is the Contributor role.  The user's role is
  * still stored in the Foundations newRole1 database column (design decision D12), so existing
  * accounts and invitations keep working.</p>
  *
@@ -48,7 +48,7 @@ import entityClasses.User;
  * @author Lynn Robert Carter (Contributor home page by Emilia Davey)
  *
  * @version 1.00		2025-08-20 Initial version (as the Role1 home page)
- * @version 2.00		2026-10-14 TP2: the Contributor Home Page, split out of the HW2 Role1 page
+ * @version 2.00		2026-10-14 TP2: the Contributor Home Page, split out of the HW2 Contributor page
  *
  */
 
