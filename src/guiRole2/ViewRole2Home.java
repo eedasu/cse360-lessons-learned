@@ -80,7 +80,7 @@ public class ViewRole2Home {
 	protected static User theUser;				// The current logged in User
 	
 	private static Scene theRole2HomeScene;		// The shared Scene each invocation populates
-	protected static final int theRole = 3;		// Admin: 1; Role1: 2; Role2: 3
+	protected static final int theRole = 3;		// Admin: 1; Contributor: 2; Role2: 3
 
 	/*-*******************************************************************************************
 

@@ -131,7 +131,7 @@ public class ControllerAddRemoveRoles {
 		if (!theDatabase.getCurrentAdminRole())
 			ViewAddRemoveRoles.addList.add("Admin");
 		if (!theDatabase.getCurrentNewRole1())
-			ViewAddRemoveRoles.addList.add("Role1");
+			ViewAddRemoveRoles.addList.add("Contributor");
 		if (!theDatabase.getCurrentNewRole2())
 			ViewAddRemoveRoles.addList.add("Role2");
 
@@ -147,7 +147,7 @@ public class ControllerAddRemoveRoles {
 			ViewAddRemoveRoles.removeList.add("Admin");
 		
 		if (theDatabase.getCurrentNewRole1())
-			ViewAddRemoveRoles.removeList.add("Role1");
+			ViewAddRemoveRoles.removeList.add("Contributor");
 		if (theDatabase.getCurrentNewRole2())
 			ViewAddRemoveRoles.removeList.add("Role2");
 		
@@ -165,9 +165,9 @@ public class ControllerAddRemoveRoles {
 		// Roles 1 - It could be at the head of the list or later in the list
 		if (theDatabase.getCurrentNewRole1()) {
 			if (notTheFirst)
-				theCurrentRoles += ", Role1"; 
+				theCurrentRoles += ", Contributor"; 
 			else {
-				theCurrentRoles += "Role1";
+				theCurrentRoles += "Contributor";
 				notTheFirst = true;
 			}
 		}

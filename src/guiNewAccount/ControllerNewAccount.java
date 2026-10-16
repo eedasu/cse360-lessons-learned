@@ -152,7 +152,7 @@ public class ControllerNewAccount {
 			if (ViewNewAccount.theRole.compareTo("Admin") == 0) {
 				roleCode = 1;
 				user = new User(username, password, "", "", "", "", "", true, false, false);
-			} else if (ViewNewAccount.theRole.compareTo("Role1") == 0) {
+			} else if (ViewNewAccount.theRole.compareTo("Role1") == 0 || ViewNewAccount.theRole.compareTo("Contributor") == 0) {
 				roleCode = 2;
 				user = new User(username, password, "", "", "", "", "", false, true, false);
 			} else if (ViewNewAccount.theRole.compareTo("Role2") == 0) {

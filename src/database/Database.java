@@ -1073,7 +1073,7 @@ public class Database {
 				return false;
 			}
 		}
-		if (role.compareTo("Role1") == 0) {
+		if (role.compareTo("Role1") == 0 || role.compareTo("Contributor") == 0) {
 			String query = "UPDATE userDB SET newRole1 = ? WHERE username = ?";
 			try (PreparedStatement pstmt = connection.prepareStatement(query)) {
 				pstmt.setString(1, value);

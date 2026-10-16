@@ -81,8 +81,11 @@ public class ControllerAdminHome {
 		
 		// Inform the user that the invitation has been sent and display the invitation code
 		String theSelectedRole = (String) ViewAdminHome.combobox_SelectRole.getValue();
+		// Fix: Update "Contributor" selected to be "Role1" to not break database
+		String dbRole = theSelectedRole.equals("Contributor") ? "Role1" : theSelectedRole;
+		// Sends "Role1" to the database for "Contributor"
 		String invitationCode = theDatabase.generateInvitationCode(emailAddress,
-				theSelectedRole);
+				dbRole);
 		String msg = "Code: " + invitationCode + " for role " + theSelectedRole + 
 				" was sent to: " + emailAddress;
 		System.out.println(msg);
@@ -267,7 +270,7 @@ public class ControllerAdminHome {
 				// Roles set up
 				String roles = "";
 				if (theDatabase.getCurrentAdminRole()) roles += "Admin, ";
-				if (theDatabase.getCurrentNewRole1()) roles += "Role1, ";
+				if (theDatabase.getCurrentNewRole1()) roles += "Contributor, ";
 				if (theDatabase.getCurrentNewRole2()) roles += "Role2, ";
 				
 				if (roles.endsWith(", ")) {
