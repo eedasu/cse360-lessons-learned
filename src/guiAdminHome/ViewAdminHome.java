@@ -167,8 +167,8 @@ public class ViewAdminHome {
 
 	/** The shared Scene each invocation populates. */
 	private static Scene theAdminHomeScene;		// The shared Scene each invocation populates
-	/** The home page code for Admin (Admin: 1; Role1: 2; Role2: 3). */
-	private static final int theRole = 1;		// Admin: 1; Role1: 2; Role2: 3
+	/** The home page code for Admin (Admin: 1; Contributor: 2; Role2: 3). */
+	private static final int theRole = 1;		// Admin: 1; Contributor: 2; Role2: 3
 
 	/*-*******************************************************************************************
 
