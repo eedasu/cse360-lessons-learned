@@ -18,15 +18,25 @@ public class User {
 	/*
 	 * These are the private attributes for this entity object
 	 */
+    /** The account username. */
     private String userName;
+    /** The account password. */
     private String password;
+    /** The user's first name. */
     private String firstName;
+    /** The user's middle name. */
     private String middleName;
+    /** The user's last name. */
     private String lastName;
+    /** The user's display name (preferred first name). */
     private String preferredFirstName;
+    /** The user's email address. */
     private String emailAddress;
+    /** Whether the user has the Admin role. */
     private boolean adminRole;
+    /** Whether the user has Role1, which TP2 shows as the Contributor role (design decision D12). */
     private boolean role1;
+    /** Whether the user has Role2. */
     private boolean role2;
     
     
@@ -50,11 +60,21 @@ public class User {
      * 
      * @param password specifies the account password for this user
      * 
+     * @param fn specifies the first name for this user
+     * 
+     * @param mn specifies the middle name for this user
+     * 
+     * @param ln specifies the last name for this user
+     * 
+     * @param pfn specifies the display name (preferred first name) for this user
+     * 
+     * @param ea specifies the email address for this user
+     * 
      * @param r1 specifies the the Admin attribute (TRUE or FALSE) for this user
      * 
-     * @param r2 specifies the the Student attribute (TRUE or FALSE) for this user
+     * @param r2 specifies the the Role1 attribute, the Contributor role in TP2 (TRUE or FALSE)
      * 
-     * @param r3 specifies the the Reviewer attribute (TRUE or FALSE) for this user
+     * @param r3 specifies the the Role2 attribute (TRUE or FALSE) for this user
      * 
      */
     // Constructor to initialize a new User object with userName, password, and role.
@@ -198,12 +218,40 @@ public class User {
     // Gets the current value of the Student role attribute.
     public String getEmailAddress() { return emailAddress; }
 
+    /**
+     * Sets the username.
+     * @param s the new username
+     */
     public void setUserName(String s) { userName = s; }
+    /**
+     * Sets the password.
+     * @param s the new password
+     */
     public void setPassword(String s) { password = s; }
+    /**
+     * Sets the first name.
+     * @param s the new first name
+     */
     public void setFirstName(String s) { firstName = s; }
+    /**
+     * Sets the middle name.
+     * @param s the new middle name
+     */
     public void setMiddleName(String s) { middleName = s; }
+    /**
+     * Sets the last name.
+     * @param s the new last name
+     */
     public void setLastName(String s) { lastName = s; }
+    /**
+     * Sets the display name (preferred first name).
+     * @param s the new display name (preferred first name)
+     */
     public void setPreferredFirstName(String s) { preferredFirstName = s; }
+    /**
+     * Sets the email address.
+     * @param s the new email address
+     */
     public void setEmailAddress(String s) { emailAddress = s; }
 
     

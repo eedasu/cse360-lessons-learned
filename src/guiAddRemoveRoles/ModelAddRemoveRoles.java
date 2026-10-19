@@ -17,4 +17,10 @@ package guiAddRemoveRoles;
 
 public class ModelAddRemoveRoles {
 
+	/**
+	 * Default constructor.  This Model is a stub: the page has no data of its own to manage.
+	 */
+	public ModelAddRemoveRoles() {
+	}
+
 }

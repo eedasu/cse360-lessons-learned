@@ -61,6 +61,12 @@ import javafx.scene.control.Alert.AlertType;
  */
 
 public class FoundationsMain extends Application {
+
+	/**
+	 * Default constructor, called by JavaFX when the application is launched.
+	 */
+	public FoundationsMain() {
+	}
 	
 	/*-*******************************************************************************************
 
@@ -70,15 +76,20 @@ public class FoundationsMain extends Application {
 	
 	// These are the application values required by the user interface.  All the other classes
 	// access these constants to provide a uniform window size.	
+	/** The width of every window, in pixels. */
 	public final static double WINDOW_WIDTH = 800;
+	/** The height of every window, in pixels. */
 	public final static double WINDOW_HEIGHT = 600;
 
 	// These attributes establish the database and the fixed reference to it for the rest of the
 	// application so we do not need to keep passing the reference in parameters to the rest of the
 	// system for other methods that need it can access it.
+	/** The one shared Database used by every page. */
 	public static Database database = new Database();
+    /** Shown if the database is already in use by another copy of the application. */
     private Alert databaseInUse = new Alert(AlertType.INFORMATION);
 
+	/** Which role's home page is currently active (1 Admin, 2 Role1/Contributor, 3 Role2). */
 	public static int activeHomePage = 0;		// Which role's home page is currently active?
 												// Role 0 is the admin role number
 	@Override
@@ -119,7 +130,7 @@ public class FoundationsMain extends Application {
 	 * command line parameters, if needed.  This application does not use them.  If they are
 	 * provided, the application will ignore them.</p>
 	 * 
-	 * @param String[] args   The array of command lines parameters.  These are not used.
+	 * @param args   The array of command lines parameters.  These are not used.
 	 */
 	public static void main(String[] args) {
 		launch(args);	// The launch method loads JavaFX and invokes its initialization.  When it

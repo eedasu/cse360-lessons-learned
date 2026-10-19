@@ -41,7 +41,7 @@ import inputValidation.PasswordRecognizer;
  * <p> Copyright: Lynn Robert Carter © 2025 </p>
  * 
  * @author Lynn Robert Carter
- * @author Virgil Jones & Team Fall 2026
+ * @author Virgil Jones &amp; Team Fall 2026
  * 
  * @version 1.01		2025-08-19 Initial version plus new internal documentation
  * @version 2.00		2026-09-17 User input information has validation, and Preferred Name changed to Display Name, 
@@ -215,7 +215,7 @@ public class ViewUserUpdate {
 	 * This method determines the location, size, font, color, and change and event handlers for
 	 * each GUI object.</p>
 	 * 
-	 * This is a singleton and is only performed once.  Subsequent uses fill in the changeable
+	 * <p> This is a singleton and is only performed once.  Subsequent uses fill in the changeable
 	 * fields using the displayUserUpdate method.</p>
 	 * 
 	 */

@@ -6,19 +6,29 @@ package inputValidation;
  * <p> Description: Automated testbed for validating Password, Email, UserName, 
  * and Name input recognizers for TP1.</p>
  * 
- * @author Virgil Jones & Team Fall 2026
+ * @author Virgil Jones &amp; Team Fall 2026
  * 
  * @version 1.00	2026-09-20 Input Validation Test Automation for TP1
  * 
  */
 public class InputValidationTestingAutomation {
 
+	/**
+	 * Default constructor is not used; every member is static.
+	 */
+	public InputValidationTestingAutomation() {
+	}
+
+	/** Counter of the number of passed tests. */
 	static int numPassed = 0;	// Counter of the number of passed tests
+	/** Counter of the number of failed tests. */
 	static int numFailed = 0;	// Counter of the number of failed tests
 
-	/*
+	/**
 	 * This mainline displays a header to the console, performs a sequence of
 	 * test cases, and then displays a footer with a summary of the results
+	 * 
+	 * @param args not used
 	 */
 	public static void main(String[] args) {
 		/************** Test cases semi-automation report header **************/
@@ -146,7 +156,12 @@ public class InputValidationTestingAutomation {
 	 * and displays the interpreted result.
 	 */
 
-	// Password Test
+	/**
+	 * Password Test: runs one password test case and reports the result.
+	 * @param testCase	the test case number
+	 * @param inputText	the input to check
+	 * @param expectedPass	true if the input should be accepted
+	 */
 	private static void performPasswordTestCase(int testCase, String inputText, boolean expectedPass) {
 		System.out.println("____________________________________________________________________________\n\nTest case: " + testCase);
 		System.out.println("Input: \"" + inputText + "\"");
@@ -160,7 +175,12 @@ public class InputValidationTestingAutomation {
 		displayPasswordEvaluation();
 	}
 
-	// UserName Test
+	/**
+	 * UserName Test: runs one username test case and reports the result.
+	 * @param testCase	the test case number
+	 * @param inputText	the input to check
+	 * @param expectedPass	true if the input should be accepted
+	 */
 	private static void performUserNameTestCase(int testCase, String inputText, boolean expectedPass) {
 		System.out.println("____________________________________________________________________________\n\nTest case: " + testCase);
 		System.out.println("Input: \"" + inputText + "\"");
@@ -173,7 +193,12 @@ public class InputValidationTestingAutomation {
 		evaluateResult("username", inputText, resultText, expectedPass);
 	}
 
-	// Email Test
+	/**
+	 * Email Test: runs one email address test case and reports the result.
+	 * @param testCase	the test case number
+	 * @param inputText	the input to check
+	 * @param expectedPass	true if the input should be accepted
+	 */
 	private static void performEmailTestCase(int testCase, String inputText, boolean expectedPass) {
 		System.out.println("____________________________________________________________________________\n\nTest case: " + testCase);
 		System.out.println("Input: \"" + inputText + "\"");
@@ -186,7 +211,14 @@ public class InputValidationTestingAutomation {
 		evaluateResult("email address", inputText, resultText, expectedPass);
 	}
 
-	// Name Input Test
+	/**
+	 * Name Input Test: runs one name test case and reports the result.
+	 * @param testCase	the test case number
+	 * @param inputText	the input to check
+	 * @param fieldName	the name field being tested (for the report)
+	 * @param expectedPass	true if the input should be accepted
+	 * @param isRequired	true if the field may not be empty
+	 */
 	private static void performNameTestCase(int testCase, String inputText, String fieldName, boolean expectedPass, boolean isRequired) {
 		System.out.println("____________________________________________________________________________\n\nTest case: " + testCase);
 		System.out.println("Input: \"" + inputText + "\" (" + fieldName + ")");
@@ -199,7 +231,14 @@ public class InputValidationTestingAutomation {
 		evaluateResult(fieldName, inputText, resultText, expectedPass);
 	}
 
-	// Evaluate Function
+	/**
+	 * Evaluate Function: compares a recognizer's result with the expected outcome, prints it,
+	 * and updates the pass and fail counters.
+	 * @param itemType	the kind of input tested
+	 * @param inputText	the input that was checked
+	 * @param resultText	the recognizer's message (empty means valid)
+	 * @param expectedPass	true if the input should have been accepted
+	 */
 	private static void evaluateResult(String itemType, String inputText, String resultText, boolean expectedPass) {
 		if (resultText != null && resultText != "") {
 			if (expectedPass) {
@@ -227,7 +266,9 @@ public class InputValidationTestingAutomation {
 		}
 	}
 
-	// Password requirements
+	/**
+	 * Password requirements: prints which password requirements were and were not met.
+	 */
 	private static void displayPasswordEvaluation() {
 		if (PasswordRecognizer.foundUpperCase)
 			System.out.println("At least one upper case letter - Satisfied");

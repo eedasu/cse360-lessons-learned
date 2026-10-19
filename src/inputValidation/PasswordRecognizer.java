@@ -14,7 +14,7 @@ package inputValidation;
  * <p> Copyright: Lynn Robert Carter © 2025 </p>
  *
  * @author Lynn Robert Carter
- * @author Virgil Jones & Team Fall 2026
+ * @author Virgil Jones &amp; Team Fall 2026
  *
  * @version 2.00	2025-07-30 Rewrite of this application for the Fall 2025 offering of CSE 360
  * and other ASU courses.
@@ -22,6 +22,12 @@ package inputValidation;
  */
 
 public class PasswordRecognizer {
+
+	/**
+	 * Default constructor is not used; every member is static.
+	 */
+	public PasswordRecognizer() {
+	}
 		
 	
 	/*-********************************************************************************************
@@ -31,22 +37,35 @@ public class PasswordRecognizer {
 	 * 
 	 */
 
+	/** The error message text. */
 	public static String passwordErrorMessage = "";		// The error message text
+	/** The input being processed. */
 	public static String passwordInput = "";			// The input being processed
+	/** The index where the error was located. */
 	public static int passwordIndexofError = -1;		// The index where the error was located
+	/** True once an upper case letter has been found. */
 	public static boolean foundUpperCase = false;
+	/** True once a lower case letter has been found. */
 	public static boolean foundLowerCase = false;
+	/** True once a numeric digit has been found. */
 	public static boolean foundNumericDigit = false;
+	/** True once a special character has been found. */
 	public static boolean foundSpecialChar = false;
+	/** True once the password is long enough. */
 	public static boolean foundLongEnough = false;
+	/** The input line. */
 	private static String inputLine = "";				// The input line
+	/** The current character in the line. */
 	private static char currentChar;					// The current character in the line
+	/** The index of the current character. */
 	private static int currentCharNdx;					// The index of the current character
+	/** The flag that specifies if the FSM is running. */
 	private static boolean running;						// The flag that specifies if the FSM is 
 														// running
+	/** Max password character length. */
 	public static final int MAX_PASS_LENGTH = 32;		// Max password character length
 
-	/*
+	/**
 	 * This private method displays the input line and then on a line under it displays the input
 	 * up to the point of the error.  At that point, a question mark is place and the rest of the 
 	 * input is ignored. This method is designed to be used to display information to make it clear

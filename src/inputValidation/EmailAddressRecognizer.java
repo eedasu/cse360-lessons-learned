@@ -1,29 +1,35 @@
 package inputValidation;
 
 
+/**
+ * <p> Title: FSM-translated EmailAddressRecognizer. </p>
+ * 
+ * <p> Description: A demonstration of the mechanical translation of Finite State Machine 
+ * diagram into an executable Java program using the Email Address Recognizer. The code 
+ * detailed design is based on a while loop with a select list</p>
+ * 
+ * <p> Copyright: Lynn Robert Carter © 2022 </p>
+ * 
+ * @author Lynn Robert Carter
+ * @author Virgil Jones &amp; Team Fall 2026
+ * 
+ * @version 0.00		2018-02-04	Initial baseline 
+ * @version 2.00		2022-01-06	Rewritten to recognize email addresses and enhanced
+ * 										to support FSM with up through 999 states for the 
+ * 										trace output to align nicely
+ * @version 3.00		2022-03-22	Adjusted to clean up the code and resolving alignment
+ * 										issues with the design and to correct the issue
+ * 										with an empty email address
+ * @version 4.00		2026-09-16	Updated content: email now requires a dot followed by 2 or more alphabetic characters (TLD)
+ * 
+ */
 public class EmailAddressRecognizer {
+
 	/**
-	 * <p> Title: FSM-translated EmailAddressRecognizer. </p>
-	 * 
-	 * <p> Description: A demonstration of the mechanical translation of Finite State Machine 
-	 * diagram into an executable Java program using the Email Address Recognizer. The code 
-	 * detailed design is based on a while loop with a select list</p>
-	 * 
-	 * <p> Copyright: Lynn Robert Carter © 2022 </p>
-	 * 
-	 * @author Lynn Robert Carter
-	 * @author Virgil Jones & Team Fall 2026
-	 * 
-	 * @version 0.00		2018-02-04	Initial baseline 
-	 * @version 2.00		2022-01-06	Rewritten to recognize email addresses and enhanced
-	 * 										to support FSM with up through 999 states for the 
-	 * 										trace output to align nicely
-	 * @version 3.00		2022-03-22	Adjusted to clean up the code and resolving alignment
-	 * 										issues with the design and to correct the issue
-	 * 										with an empty email address
-	 * @version 4.00		2026-09-16	Updated content: email now requires a dot followed by 2 or more alphabetic characters (TLD)
-	 * 
+	 * Default constructor is not used; every member is static.
 	 */
+	public EmailAddressRecognizer() {
+	}
 
 	/**********************************************************************************************
 	 * 
@@ -32,17 +38,28 @@ public class EmailAddressRecognizer {
 	 * 
 	 */
 
+	/** The error message text. */
 	public static String emailAddressErrorMessage = "";	// The error message text
+	/** The input being processed. */
 	public static String emailAddressInput = "";		// The input being processed
+	/** The index where the error was located. */
 	public static int emailAddressIndexofError = -1;	// The index where the error was located
+	/** The current state value. */
 	private static int state = 0;						// The current state value
+	/** The next state value. */
 	private static int nextState = 0;					// The next state value
+	/** Is this state a final state? */
 	private static boolean finalState = false;			// Is this state a final state?
+	/** The input line. */
 	private static String inputLine = "";				// The input line
+	/** The current character in the line. */
 	private static char currentChar;					// The current character in the line
+	/** The index of the current character. */
 	private static int currentCharNdx;					// The index of the current character
+	/** The flag that specifies if the FSM is running. */
 	private static boolean running;						// The flag that specifies if the FSM is 
 														// running
+	/** A domain name may not exceed 63 characters. */
 	private static int domainPartCounter = 0;			// A domain name may not exceed 63 characters
 
 	/**********
@@ -62,6 +79,7 @@ public class EmailAddressRecognizer {
 	}
 
 
+	/** Displays the current state of the FSM as one line of the execution trace. */
 	private static void displayDebuggingInfo() {
 		// Display the current state of the FSM as part of an execution trace
 		if (currentCharNdx >= inputLine.length())
@@ -75,6 +93,7 @@ public class EmailAddressRecognizer {
 					nextState + "     " + domainPartCounter);
 	}
 
+	/** Moves to the next character, or stops the FSM at the end of the input. */
 	private static void moveToNextCharacter() {
 		currentCharNdx++;
 		if (currentCharNdx < inputLine.length())

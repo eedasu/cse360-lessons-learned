@@ -25,7 +25,7 @@ import inputValidation.PasswordRecognizer;
  * <p> Copyright: Lynn Robert Carter © 2025 </p>
  * 
  * @author Lynn Robert Carter
- * @author Virgil Jones & Team Fall 2026
+ * @author Virgil Jones &amp; Team Fall 2026
  * 
  * @version 1.00		2025-08-17 Initial version
  * @version 2.00		2026-09-16 Updated to implement username and password validation with dynamic updates
@@ -52,6 +52,7 @@ public class ControllerNewAccount {
 	
 	
 	// Reference for the in-memory database so this package has access
+	/** Reference for the in-memory database so this package has access. */
 	private static Database theDatabase = applicationMain.FoundationsMain.database;
 	
 	/**********

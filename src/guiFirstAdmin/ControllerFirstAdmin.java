@@ -26,7 +26,7 @@ import javafx.scene.paint.Color;
  * <p> Copyright: Lynn Robert Carter © 2025 </p>
  * 
  * @author Lynn Robert Carter
- * @author Virgil Jones & Team Fall 2026
+ * @author Virgil Jones &amp; Team Fall 2026
  * 
  * @version 1.00		2025-08-17 Initial version
  * @version 2.00		2026-09-16 Updated to implement username and password validation with dynamic updates
@@ -44,9 +44,13 @@ public class ControllerFirstAdmin {
 	
 	*/
 	
+	/** The admin username as last typed on the page. */
 	private static String adminUsername = "";
+	/** The first copy of the admin password as last typed. */
 	private static String adminPassword1 = "";
+	/** The second copy of the admin password, which must match the first. */
 	private static String adminPassword2 = "";		
+	/** Reference for the in-memory database so this package has access. */
 	protected static Database theDatabase = applicationMain.FoundationsMain.database;		
 
 	/*-********************************************************************************************
@@ -142,6 +146,9 @@ public class ControllerFirstAdmin {
 	 * account.  It start by trying to establish a new user and placing that user into the
 	 * database.  If that is successful, we proceed to the UserUpdate page.</p>
 	 * 
+	 * @param ps the JavaFX Stage the pages are shown on
+	 * 
+	 * @param r the role code of the account being set up (1 is Admin)
 	 */
 	protected static void doSetupAdmin(Stage ps, int r) {
 		

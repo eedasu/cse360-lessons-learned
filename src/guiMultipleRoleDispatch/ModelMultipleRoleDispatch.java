@@ -17,4 +17,10 @@ package guiMultipleRoleDispatch;
 
 public class ModelMultipleRoleDispatch {
 
+	/**
+	 * Default constructor.  This Model is a stub: the page has no data of its own to manage.
+	 */
+	public ModelMultipleRoleDispatch() {
+	}
+
 }

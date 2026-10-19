@@ -1,25 +1,31 @@
 package inputValidation;
 
+/*******
+ * <p> Title: NameInputRecognizer </p>
+ * 
+ * <p> Description: A demonstration of the mechanical translation of a Finite State Machine 
+ * diagram into an executable Java program for validating human names. 
+ * 
+ * Requirements:
+ * - Length: 1 to 100 characters.
+ * - Allowed: Alphabetic letters, single space (between two characters), apostrophes, and hyphens.
+ * - Rules: Must start and end with a letter. Consecutive separators are disallowed.</p>
+ * 
+ * <p> Copyright: Lynn Robert Carter © 2024 </p>
+ * 
+ * @author Lynn Robert Carter
+ * @author Virgil Jones &amp; Team Fall 2026
+ * 
+ * @version 1.00		2026-09-16 Initial version for TP1 name validation
+ * 
+ */
 public class NameInputRecognizer {
-	/*******
-	 * <p> Title: NameInputRecognizer </p>
-	 * 
-	 * <p> Description: A demonstration of the mechanical translation of a Finite State Machine 
-	 * diagram into an executable Java program for validating human names. 
-	 * 
-	 * Requirements:
-	 * - Length: 1 to 100 characters.
-	 * - Allowed: Alphabetic letters, single space (between two characters), apostrophes, and hyphens.
-	 * - Rules: Must start and end with a letter. Consecutive separators are disallowed.</p>
-	 * 
-	 * <p> Copyright: Lynn Robert Carter © 2024 </p>
-	 * 
-	 * @author Lynn Robert Carter
-	 * @author Virgil Jones & Team Fall 2026
-	 * 
-	 * @version 1.00		2026-09-16 Initial version for TP1 name validation
-	 * 
+
+	/**
+	 * Default constructor is not used; every member is static.
 	 */
+	public NameInputRecognizer() {
+	}
 	
 	/**********************************************************************************************
 	 * 
@@ -28,22 +34,34 @@ public class NameInputRecognizer {
 	 * 
 	 */
 	
+	/** The error message text. */
 	public static String nameRecognizerErrorMessage = "";	// The error message text
+	/** The input being processed. */
 	public static String nameRecognizerInput = "";			// The input being processed
+	/** The index of the error location. */
 	public static int nameRecognizerIndexofError = -1;		// The index of error location
+	/** The current state value. */
 	private static int state = 0;						// The current state value
+	/** The next state value. */
 	private static int nextState = 0;					// The next state value
+	/** Is this state a final state? */
 	private static boolean finalState = false;			// Is this state a final state?
+	/** The input line. */
 	private static String inputLine = "";				// The input line
+	/** The current character in the line. */
 	private static char currentChar;					// The current character in the line
+	/** The index of the current character. */
 	private static int currentCharNdx;					// The index of the current character
+	/** The flag that specifies if the FSM is running. */
 	private static boolean running;						// The flag that specifies if the FSM is 
 														// running
+	/** A name may not exceed 100 characters. */
 	private static int nameSize = 0;			// A numeric value may not exceed 100 characters
 
 	
 
 	// Private method to display debugging data
+		/** Displays the current state of the FSM as one line of the execution trace. */
 		private static void displayDebuggingInfo() {
 			// Display the current state of the FSM as part of an execution trace
 			if (currentCharNdx >= inputLine.length())
@@ -58,6 +76,7 @@ public class NameInputRecognizer {
 		}
 		
 		// Private method to move to the next character within the limits of the input line
+		/** Moves to the next character within the limits of the input line. */
 		private static void moveToNextCharacter() {
 			currentCharNdx++;
 			if (currentCharNdx < inputLine.length())
