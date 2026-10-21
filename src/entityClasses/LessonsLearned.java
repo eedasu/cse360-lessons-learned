@@ -623,8 +623,8 @@ public class LessonsLearned {
 	 * to remember to check both (Test Case "View Single Lesson - Locked Field Displayed as
 	 * Read-Only"). </p>
 	 *
-	 * @param field FIELD_TITLE, FIELD_DESCRIPTION, FIELD_TAGS, or FIELD_CATEGORY.  The match is
-	 * 		case-sensitive so a typo cannot quietly come back as "not locked" for a valid name.
+	 * @param field FIELD_TITLE, FIELD_DESCRIPTION, FIELD_TAGS, or FIELD_CATEGORY (case-sensitive).
+	 * 		Any other name returns false, because only these four fields can be locked.
 	 *
 	 * @return true if the field cannot be edited right now
 	 */
